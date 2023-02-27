@@ -1,16 +1,31 @@
 # Cocktail API Camunda 8 Connector
 
 ![Compatible with: Camunda Platform 8](https://img.shields.io/badge/Compatible%20with-Camunda%20Platform%208-0072Ce)
-[![](https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700)](https://github.com/camunda-community-hub/community)
+<img src="https://img.shields.io/badge/Tutorial%20Reference%20Project-Tutorials%20for%20getting%20started%20with%20Camunda-%2338A3E1)">
 [![](https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blueviolet)](https://github.com/Camunda-Community-Hub/community/blob/main/extension-lifecycle.md#proof-of-concept-)
 ![](./images/meetup.PNG)
 
 A Camunda 8 Connector to find the best cocktail ever!
 
-## Exercise 0: Let's get C8 trial
+Welcome to Camunda's Platform 8 custom connector exercise! In this workshop you will learn to:
+* setup Camunda 8
+* setup connector development kit
+* develop your own connector and run it in runtime evnironment
+
+**To structure this course we are going to split it into 6 exercises:**
+1. Create an API for our cluster
+2. Create a Connector template
+3. Use the Connector template in a model
+4. Setup Connector SDK and implement Connector function
+5. Running the connector
+6. Find out what is the best cocktail!
+
+## 🚀 Getting started: Let's get C8 trial
 Get started with Camunda Platform 8 by creating a Camunda Platform 8 SaaS trial.
 
 https://camunda.com/get-started/
+
+# 🎓Exercises
 ## Exercise 1: Create an API for our cluster
 To be able to connect to our C8 cluster, we will have to expose an API. Later on we will use it to connect our 
 local zeebe worker instance with the custom connector to the cluster.
