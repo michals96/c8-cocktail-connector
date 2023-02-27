@@ -1,0 +1,26 @@
+package io.camunda.connector;
+
+import io.camunda.connector.api.annotation.OutboundConnector;
+import io.camunda.connector.api.outbound.OutboundConnectorContext;
+import io.camunda.connector.api.outbound.OutboundConnectorFunction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+
+@OutboundConnector(name = "CocktailConnector", inputVariables = {"ingredient"}, type = "io.camunda:cocktail-api:1")
+public class CocktailConnector implements OutboundConnectorFunction {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CocktailConnector.class);
+
+    @Override
+    public Object execute(OutboundConnectorContext context) throws Exception {
+        var connectorRequest = context.getVariablesAsType(CocktailRequest.class);
+        LOGGER.info("Finding cocktail for ingredient: " + connectorRequest.getIngredient());
+        return executeConnector(connectorRequest);
+    }
+
+    private CocktailResponse executeConnector(final CocktailRequest connectorRequest) throws IOException {
+        return new CocktailResponse(CocktailService.getCocktail(connectorRequest.getIngredient()));
+    }
+}

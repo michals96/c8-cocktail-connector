@@ -1,0 +1,1 @@
+//Implement your connector here! Use the existing models and services (available in io.camunda.connector package)

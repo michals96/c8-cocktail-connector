@@ -1,0 +1,41 @@
+{
+  "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+  "name": "Cocktail connector",
+  "id": "24fc39a9-4a2b-4662-86fb-c18b4fa1ab07",
+  "appliesTo": [
+    "bpmn:ServiceTask"
+  ],
+  "properties": [
+    {
+      "label": "Ingredient",
+      "description": "Choose your favourite cocktail ingredient. Make it count",
+      "type": "String",
+      "value": "=ingredient",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "ingredient"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Result",
+      "description": "This is my drink of choice",
+      "group": "output",
+      "type": "String",
+      "value": "drink",
+      "binding": {
+        "type": "zeebe:taskHeader",
+        "key": "resultVariable"
+      }
+    },
+    {
+      "type": "Hidden",
+      "value": "io.camunda:cocktail-api:1",
+      "binding": {
+        "type": "zeebe:taskDefinition:type"
+      }
+    }
+  ]
+}
